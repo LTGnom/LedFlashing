@@ -1,0 +1,53 @@
+#define RED1 2 
+#define ORG1 3
+#define GRN1 4
+#define RED2 6
+#define ORG2 7
+#define GRN2 8
+
+// задержка между переключением светофора 3 сек
+int pause = 3000;
+
+void setup() {
+   pinMode(RED1, OUTPUT);
+   pinMode(ORG1, OUTPUT);
+   pinMode(GRN1, OUTPUT);
+   pinMode(RED2, OUTPUT);
+   pinMode(ORG2, OUTPUT);
+   pinMode(GRN2, OUTPUT);
+}
+
+void loop() {
+  // первая фаза
+   digitalWrite(RED1, HIGH);
+   digitalWrite(ORG1, LOW);
+   digitalWrite(GRN1, LOW);
+   digitalWrite(RED2, LOW);
+   digitalWrite(ORG2, LOW);
+   digitalWrite(GRN2, HIGH);
+   delay(pause);
+  // вторая фаза
+   digitalWrite(RED1, HIGH);
+   digitalWrite(ORG1, HIGH);
+   digitalWrite(GRN1, LOW);
+   digitalWrite(RED2, LOW);
+   digitalWrite(ORG2, HIGH);
+   digitalWrite(GRN2, LOW);
+   delay(pause);
+  // третья фаза
+   digitalWrite(RED1, LOW);
+   digitalWrite(ORG1, LOW);
+   digitalWrite(GRN1, HIGH);
+   digitalWrite(RED2, HIGH);
+   digitalWrite(ORG2, LOW);
+   digitalWrite(GRN2, LOW);
+   delay(pause);
+  // четвертая фаза
+   digitalWrite(RED1, LOW);
+   digitalWrite(ORG1, HIGH);
+   digitalWrite(GRN1, LOW);
+   digitalWrite(RED2, HIGH);
+   digitalWrite(ORG2, HIGH);
+   digitalWrite(GRN2, LOW);
+   delay(pause);
+}
